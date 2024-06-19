@@ -64,11 +64,25 @@ describe("Un enclos est créé et il peut être ajouté ou supprimé", () => {
   beforeEach(() => {
     zoo = new Zoo();
   });
-  it("Un enclos est supprimé du zoo", () => {
+  it("Un enclos est ajouté au zoo", () => {
     const enclos: Enclos = creationEnclosVide();
 
     zoo.addEnclos(enclos);
 
-    Zoo.dele;
+    const enclosZoo: Enclos["identifiant"][] = zoo.getEnclos();
+
+    expect(enclosZoo).not.toBe(null);
+    expect(enclosZoo.length).toBe(1);
+  });
+
+  it("Un enclos est supprimé du zoo", () => {
+    const enclos: Enclos = creationEnclosVide();
+
+    zoo.deleteEnclos(enclos);
+
+    const enclosZoo: Enclos["identifiant"][] = zoo.getEnclos();
+
+    expect(enclosZoo).not.toBe(null);
+    expect(enclosZoo.length).toBe(0);
   });
 });
