@@ -1,7 +1,8 @@
-import { Animal } from "./Animal";
-import { Zoo } from "./Zoo";
-import { creationAnimalFrosty } from "./animal.provider";
-import { ajoutFrostyZoo } from "./zoo.provider";
+import { Animal } from "../classes/Animal";
+import { Enclos } from "../classes/Enclos";
+import { Zoo } from "../classes/Zoo";
+import { creationEnclosVide } from "../providers/enclos";
+import { ajoutFrostyZoo } from "../providers/zoo";
 
 describe("Un zoo vide est créé", () => {
   let zoo: Zoo;
@@ -19,6 +20,13 @@ describe("Un zoo vide est créé", () => {
 
     expect(animaux).not.toBe(null);
     expect(animaux.length).toBe(0);
+  });
+
+  it("Le zoo n'a aucun enclos", () => {
+    const enclos: Enclos["identifiant"][] = zoo.getEnclos();
+
+    expect(enclos).not.toBe(null);
+    expect(enclos.length).toBe(0);
   });
 });
 
@@ -47,5 +55,20 @@ describe("Un zoo est créé et des animaux sont ajoutés ou retirés", () => {
 
     expect(animaux).not.toBe(null);
     expect(animaux.length).toBe(0);
+  });
+});
+
+describe("Un enclos est créé et il peut être ajouté ou supprimé", () => {
+  let zoo: Zoo;
+
+  beforeEach(() => {
+    zoo = new Zoo();
+  });
+  it("Un enclos est supprimé du zoo", () => {
+    const enclos: Enclos = creationEnclosVide();
+
+    zoo.addEnclos(enclos);
+
+    Zoo.dele;
   });
 });

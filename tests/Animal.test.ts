@@ -1,5 +1,5 @@
-import { Animal } from "./Animal";
-import { creationAnimalFrosty } from "./animal.provider";
+import { Animal } from "../classes/Animal";
+import { creationAnimalFrosty } from "../providers/animal";
 
 describe("Un animal est créé", () => {
   let animal: Animal;

@@ -1,4 +1,4 @@
-import { Animal } from "./Animal";
+import { Animal } from "../classes/Animal";
 
 export const creationAnimalFrosty = (): Animal => {
   const nom: string = "Frosty";

@@ -1,6 +1,6 @@
-import { Animal } from "./Animal";
-import { Zoo } from "./Zoo";
-import { creationAnimalFrosty } from "./animal.provider";
+import { Animal } from "../classes/Animal";
+import { Zoo } from "../classes/Zoo";
+import { creationAnimalFrosty } from "./animal";
 
 export const ajoutFrostyZoo = (zoo: Zoo): Animal => {
   const animal: Animal = creationAnimalFrosty();
