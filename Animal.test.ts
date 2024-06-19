@@ -8,7 +8,7 @@ describe("Un animal est créé", () => {
     animal = creationAnimalFrosty();
   });
 
-  it("L'animal est défini", () => {
+  it("L'animal existe", () => {
     expect(animal).not.toBe(null);
   });
 
@@ -42,5 +42,37 @@ describe("Un animal est créé", () => {
 
     expect(enclos).not.toBe(null);
     expect(enclos.length).not.toBe(0);
+  });
+});
+
+describe("Un animal est créé et ses informations sont modifiées", () => {
+  let animal: Animal;
+
+  beforeAll(() => {
+    animal = creationAnimalFrosty();
+  });
+
+  it("L'animal s'appelle maintenant Coco", () => {
+    animal.setNom("Coco");
+
+    expect(animal.getNom()).toBe("Coco");
+  });
+
+  it("L'animal est maintenant un singe", () => {
+    animal.setEspece("Singe");
+
+    expect(animal.getEspece()).toBe("Singe");
+  });
+
+  it("L'animal a maintenant 3 ans", () => {
+    animal.setAge(3);
+
+    expect(animal.getAge()).toBe(3);
+  });
+
+  it("L'animal est maintenant dans un petit enclos", () => {
+    animal.setEnclos("Petit enclos");
+
+    expect(animal.getEnclos()).toBe("Petit enclos");
   });
 });

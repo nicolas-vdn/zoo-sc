@@ -10,7 +10,7 @@ describe("Un zoo vide est créé", () => {
     zoo = new Zoo();
   });
 
-  it("Le zoo est défini", () => {
+  it("Le zoo existe", () => {
     expect(zoo).not.toBe(null);
   });
 
