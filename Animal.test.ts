@@ -1,6 +1,6 @@
 import { Animal } from "./Animal";
 
-describe("Un animal est créé, tous les attributs existent et sont définis", () => {
+describe("Un animal est créé", () => {
   let animal: Animal;
 
   beforeAll(() => {
@@ -16,32 +16,32 @@ describe("Un animal est créé, tous les attributs existent et sont définis", (
     expect(animal).not.toBe(null);
   });
 
-  it("L'animal contient l'attribut identifiant qui est défini", () => {
+  it("L'animal a un identifiant qui est défini", () => {
     const identifiant = animal.getIdentifiant();
 
     expect(identifiant).not.toBe(null);
     expect(identifiant.length).not.toBe(0);
   });
 
-  it("L'animal contient l'attribut nom qui est défini", () => {
+  it("L'animal a un nom qui est défini", () => {
     const nom = animal.getNom();
 
     expect(nom).not.toBe(null);
     expect(nom.length).not.toBe(0);
   });
 
-  it("L'animal contient l'attribut espèce qui est défini", () => {
+  it("L'animal est d'une espèce qui est définie", () => {
     expect(animal.getEspece()).not.toBe(null);
     expect(animal.getEspece().length).not.toBe(0);
   });
 
-  it("L'animal contient l'attribut âge qui est défini", () => {
+  it("L'animal a un âge qui est défini", () => {
     const age = animal.getAge();
 
     expect(age).not.toBe(null);
   });
 
-  it("L'animal contient l'attribut enclos qui est défini", () => {
+  it("L'animal a un enclos qui est défini", () => {
     const enclos = animal.getEnclos();
 
     expect(enclos).not.toBe(null);
