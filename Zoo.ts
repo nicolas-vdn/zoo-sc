@@ -7,6 +7,10 @@ export class Zoo {
     this.animaux = [];
   }
 
+  public addAnimal(animal: Animal): void {
+    this.animaux.push(animal);
+  }
+
   public getAnimaux(): Animal[] {
     return this.animaux;
   }

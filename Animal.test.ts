@@ -1,15 +1,11 @@
 import { Animal } from "./Animal";
+import { creationAnimalFrosty } from "./animal.provider";
 
 describe("Un animal est créé", () => {
   let animal: Animal;
 
   beforeAll(() => {
-    const nom: string = "Frosty";
-    const espece: string = "Tigre";
-    const age: number = 0;
-    const enclos: string = "Grand enclos";
-
-    animal = new Animal(nom, espece, age, enclos);
+    animal = creationAnimalFrosty();
   });
 
   it("L'animal est défini", () => {

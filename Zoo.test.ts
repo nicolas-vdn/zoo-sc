@@ -1,5 +1,6 @@
 import { Animal } from "./Animal";
 import { Zoo } from "./Zoo";
+import { creationAnimalFrosty } from "./animal.provider";
 
 describe("Un zoo est créé, tous les attributs existent et sont vides", () => {
   let zoo: Zoo;
@@ -17,5 +18,15 @@ describe("Un zoo est créé, tous les attributs existent et sont vides", () => {
 
     expect(animaux).not.toBe(null);
     expect(animaux.length).toBe(0);
+  });
+
+  it("Un animal est ajouté au zoo", () => {
+    const animal: Animal = creationAnimalFrosty();
+    zoo.addAnimal(animal);
+
+    const animaux: Animal[] = zoo.getAnimaux();
+
+    expect(animaux).not.toBe(null);
+    expect(animaux.length).toBe(1);
   });
 });
