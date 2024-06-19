@@ -7,12 +7,12 @@ export class Animal {
   private age: number;
   private enclos: string;
 
-  constructor() {
+  constructor(nom: string, espece: string, age: number, enclos: string) {
     this.identifiant = uuidv4();
-    this.nom = "";
-    this.espece = "";
-    this.age = 0;
-    this.enclos = "";
+    this.nom = nom;
+    this.espece = espece;
+    this.age = age;
+    this.enclos = enclos;
   }
 
   public getIdentifiant(): string {

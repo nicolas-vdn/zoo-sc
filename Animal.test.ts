@@ -1,33 +1,50 @@
 import { Animal } from "./Animal";
 
-describe("Un animal vide est créé, tous les attributs existent et sont vides", () => {
-  let animalVide: Animal;
+describe("Un animal est créé, tous les attributs existent et sont définis", () => {
+  let animal: Animal;
 
-  beforeEach(() => {
-    animalVide = new Animal();
+  beforeAll(() => {
+    const nom: string = "Frosty";
+    const espece: string = "Tigre";
+    const age: number = 0;
+    const enclos: string = "Grand enclos";
+
+    animal = new Animal(nom, espece, age, enclos);
   });
 
   it("L'animal est défini", () => {
-    expect(animalVide).not.toBe(null);
+    expect(animal).not.toBe(null);
   });
 
-  it("L'animal contient l'attribut identifiant", () => {
-    expect(animalVide.getIdentifiant()).not.toBe(null);
+  it("L'animal contient l'attribut identifiant qui est défini", () => {
+    const identifiant = animal.getIdentifiant();
+
+    expect(identifiant).not.toBe(null);
+    expect(identifiant.length).not.toBe(0);
   });
 
-  it("L'animal contient l'attribut nom", () => {
-    expect(animalVide.getNom()).not.toBe(null);
+  it("L'animal contient l'attribut nom qui est défini", () => {
+    const nom = animal.getNom();
+
+    expect(nom).not.toBe(null);
+    expect(nom.length).not.toBe(0);
   });
 
-  it("L'animal contient l'attribut espèce", () => {
-    expect(animalVide.getEspece()).not.toBe(null);
+  it("L'animal contient l'attribut espèce qui est défini", () => {
+    expect(animal.getEspece()).not.toBe(null);
+    expect(animal.getEspece().length).not.toBe(0);
   });
 
-  it("L'animal contient l'attribut âge", () => {
-    expect(animalVide.getAge()).not.toBe(null);
+  it("L'animal contient l'attribut âge qui est défini", () => {
+    const age = animal.getAge();
+
+    expect(age).not.toBe(null);
   });
 
-  it("L'animal contient l'attribut enclos", () => {
-    expect(animalVide.getEnclos()).not.toBe(null);
+  it("L'animal contient l'attribut enclos qui est défini", () => {
+    const enclos = animal.getEnclos();
+
+    expect(enclos).not.toBe(null);
+    expect(enclos.length).not.toBe(0);
   });
 });
