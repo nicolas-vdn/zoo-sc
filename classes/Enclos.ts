@@ -1,16 +1,17 @@
 import { v4 as uuidv4 } from "uuid";
+import { Espece } from "../enums/Espece";
 
 export class Enclos {
   private identifiant: string;
   private nom: string;
   private taille: string;
-  private especes: string[];
+  private especesAcceptees: Espece[];
 
-  constructor(nom: string, taille: string, especes: string[]) {
+  constructor(nom: string, taille: string, especesAcceptees: Espece[]) {
     this.identifiant = uuidv4();
     this.nom = nom;
     this.taille = taille;
-    this.especes = especes;
+    this.especesAcceptees = especesAcceptees;
   }
 
   public getIdentifiant(): string {
@@ -33,11 +34,11 @@ export class Enclos {
     this.taille = taille;
   }
 
-  public getEspeces(): string[] {
-    return this.especes;
+  public getEspecesAcceptees(): Espece[] {
+    return this.especesAcceptees;
   }
 
-  public setEspeces(especes: string[]): void {
-    this.especes = especes;
+  public setEspecesAcceptees(especesAcceptees: Espece[]): void {
+    this.especesAcceptees = especesAcceptees;
   }
 }

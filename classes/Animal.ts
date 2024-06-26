@@ -1,18 +1,17 @@
 import { v4 as uuidv4 } from "uuid";
+import { Espece } from "../enums/Espece";
 
 export class Animal {
   private identifiant: string;
   private nom: string;
-  private espece: string;
-  private age: number;
-  private enclos: string;
+  private dateNaissance: Date;
+  private espece: Espece;
 
-  constructor(nom: string, espece: string, age: number, enclos: string) {
+  constructor(nom: string, espece: Espece, dateNaissance: Date) {
     this.identifiant = uuidv4();
     this.nom = nom;
     this.espece = espece;
-    this.age = age;
-    this.enclos = enclos;
+    this.dateNaissance = dateNaissance;
   }
 
   public getIdentifiant(): string {
@@ -27,27 +26,19 @@ export class Animal {
     this.nom = nom;
   }
 
-  public getEspece(): string {
+  public getEspece(): Espece {
     return this.espece;
   }
 
-  public setEspece(espece: string): void {
+  public setEspece(espece: Espece): void {
     this.espece = espece;
   }
 
-  public getAge(): number {
-    return this.age;
+  public getDateNaissance(): Date {
+    return this.dateNaissance;
   }
 
-  public setAge(age: number): void {
-    this.age = age;
-  }
-
-  public getEnclos(): string {
-    return this.enclos;
-  }
-
-  public setEnclos(enclos: string): void {
-    this.enclos = enclos;
+  public setDateNaissance(dateNaissance: Date): void {
+    this.dateNaissance = dateNaissance;
   }
 }

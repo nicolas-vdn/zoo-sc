@@ -5,9 +5,9 @@ export class Zoo {
   private animaux: Animal["identifiant"][];
   private enclos: Enclos["identifiant"][];
 
-  constructor() {
-    this.animaux = [];
-    this.enclos = [];
+  constructor(animaux: Animal[] = [], enclos: Enclos[] = []) {
+    this.animaux = animaux.map((animal: Animal) => animal.getIdentifiant());
+    this.enclos = enclos.map((enclos: Enclos) => enclos.getIdentifiant());
   }
 
   public addAnimal(animal: Animal): void {
@@ -17,7 +17,7 @@ export class Zoo {
   public deleteAnimal(animal: Animal): void {
     const indexAnimal: number = this.animaux.indexOf(animal.getIdentifiant());
 
-    this.animaux.splice(indexAnimal, 1);
+    this.animaux.splice(indexAnimal, indexAnimal !== -1 ? 1 : 0);
   }
 
   public getAnimaux(): Animal["identifiant"][] {
@@ -32,10 +32,10 @@ export class Zoo {
     this.enclos.push(enclos.getIdentifiant());
   }
 
-  public deleteEnclos(enclos: Animal): void {
+  public deleteEnclos(enclos: Enclos): void {
     const indexEnclos: number = this.enclos.indexOf(enclos.getIdentifiant());
 
-    this.enclos.splice(indexEnclos, 1);
+    this.enclos.splice(indexEnclos, indexEnclos !== -1 ? 1 : 0);
   }
 
   public getEnclos(): Enclos["identifiant"][] {
